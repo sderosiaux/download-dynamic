@@ -1,10 +1,10 @@
 {
   "name": "download-dynamic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Download the content from a url containing dynamic parts",
   "main": "src/download-dynamic.js",
   "bin": {
-    "download-dynamic": "download-dynamic.js"
+    "download-dynamic": "bin/download-dynamic.js"
   },
   "dependencies": {
     "debug": "^2.1.3",
