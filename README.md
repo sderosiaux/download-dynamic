@@ -34,7 +34,9 @@ Those macros will be replaced by what you specify.
 
 ```
 $ download-dynamic http://example.com/cat-{cat}/page-{page}/{suffix} --page 1,4 --suffix 'ryelth|roddington|odiham' --cat 100,102
-[ 'http://example.com/cat-100/page-1/{suffix}',
+[ 'http://example.com/cat-100/page-1/ryelth',
+  'http://example.com/cat-100/page-1/roddington',
+  'http://example.com/cat-100/page-1/odiham',
   'http://example.com/cat-100/page-2/ryelth',
   'http://example.com/cat-100/page-2/roddington',
   'http://example.com/cat-100/page-2/odiham',
@@ -44,7 +46,9 @@ $ download-dynamic http://example.com/cat-{cat}/page-{page}/{suffix} --page 1,4 
   'http://example.com/cat-100/page-4/ryelth',
   'http://example.com/cat-100/page-4/roddington',
   'http://example.com/cat-100/page-4/odiham',
-  'http://example.com/cat-101/page-1/{suffix}',
+  'http://example.com/cat-101/page-1/ryelth',
+  'http://example.com/cat-101/page-1/roddington',
+  'http://example.com/cat-101/page-1/odiham',
   'http://example.com/cat-101/page-2/ryelth',
   'http://example.com/cat-101/page-2/roddington',
   'http://example.com/cat-101/page-2/odiham',
@@ -54,7 +58,9 @@ $ download-dynamic http://example.com/cat-{cat}/page-{page}/{suffix} --page 1,4 
   'http://example.com/cat-101/page-4/ryelth',
   'http://example.com/cat-101/page-4/roddington',
   'http://example.com/cat-101/page-4/odiham',
-  'http://example.com/cat-102/page-1/{suffix}',
+  'http://example.com/cat-102/page-1/ryelth',
+  'http://example.com/cat-102/page-1/roddington',
+  'http://example.com/cat-102/page-1/odiham',
   'http://example.com/cat-102/page-2/ryelth',
   'http://example.com/cat-102/page-2/roddington',
   'http://example.com/cat-102/page-2/odiham',
@@ -64,4 +70,3 @@ $ download-dynamic http://example.com/cat-{cat}/page-{page}/{suffix} --page 1,4 
   'http://example.com/cat-102/page-4/ryelth',
   'http://example.com/cat-102/page-4/roddington',
   'http://example.com/cat-102/page-4/odiham' ]
-  ```
