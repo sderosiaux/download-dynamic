@@ -4,9 +4,14 @@ var RE_dynamicPart = /{(.*?)}/g;
 
 function replaceDynamic(url, opts) {
     var originalUrl = url;
+
+    var newRE = new RegExp('{(.*?)}');
+
     // find the first macro "{...}"
-    var result = RE_dynamicPart.exec(url);
+    var result = newRE.exec(url);
     var urls = [];
+
+    // TODO: refactor and do not use a recursive, I'm sure there is a way simpler way to compute the combinaisons.
 
     // we found one ?
     if (result) {
@@ -19,9 +24,6 @@ function replaceDynamic(url, opts) {
         if (!partOptions) {
             throw Error('No dynamic associated with {' + macro + '}')
         }
-
-        // are we going to have a url without anything more to replace?
-        var noMoreDynamic = RE_dynamicPart.exec(url) == null;
 
         // create the values from the dynamic part options
         // right now, 2 types are handled :
@@ -47,27 +49,23 @@ function replaceDynamic(url, opts) {
 
         // replace the current match with the given value
         // apply the dynamic part and continue to process the rest of the url
-        // in case there is other macro
         var buildUrl = function(value) {
 			url = originalUrl.replace(match, value);
-			if (noMoreDynamic) {
-                // no, our url is done !
-                urls.push(url);
-            } else {
-                // yes, our url is not done yet, recursive call
-                urls = urls.concat(replaceDynamic(url, opts));
-            }
+            urls = urls.concat(replaceDynamic(url, opts));
         };
 
         // let's go
 		getDynamicValues(buildUrl);
-    }
+
+    } else {
+    	// no dynamic part, add it
+		urls.push(url);
+	}
 
     return urls;
 }
 
 module.exports = function(url, opts) {
     var urls = replaceDynamic(url, opts);
-    console.log(urls);
-    //download(urls);
+    download(urls);
 };
