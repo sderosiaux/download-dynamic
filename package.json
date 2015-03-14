@@ -1,6 +1,6 @@
 {
   "name": "download-dynamic",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Download the content from a url containing dynamic parts",
   "main": "src/download-dynamic.js",
   "bin": {
@@ -11,9 +11,12 @@
     "download-collection": "latest",
     "minimist": "^1.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^2.1.1",
+    "mocha": "^2.2.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
