@@ -15,7 +15,7 @@ dd.download('http://example.com/cat-{cat}/page-{page}/{suffix}', {
 
 That will download every resources of the url by replacing each macros with the values you specified.
 
-```
+
 ## Command line
 
 If you have `npm install -g download-dynamic`, you can do :
