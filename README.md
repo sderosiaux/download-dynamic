@@ -10,7 +10,8 @@ dd.download('http://example.com/cat-{cat}/page-{page}/{suffix}', {
 	page: { min: 1, max: 4 },
 	suffix: [ 'ryelth', 'roddington', 'odiham' ],
 	cat: { min: 100, max: 102 }
-});```
+});
+```
 
 That will download every resources of the url by replacing each macros with the values you specified.
 
